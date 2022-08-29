@@ -1,0 +1,22 @@
+.App-Container{
+    background-color: aqua;
+    height:100vh;
+    .Card-Container{
+        background-color: #B9FFF8;
+        border-radius: 20px;
+        margin-top: 40px;
+        margin-left: 50px;
+        padding-left: 10%;
+        margin-right: 20px !important;
+        margin-bottom: 20px;
+        .Card-item{
+            background-color: #6FEDD6;
+            height:40%;
+            margin:20px;
+            border-radius: 10px;
+        }
+    }
+    .submit-button{
+        padding-left: 50%;
+    }
+}
