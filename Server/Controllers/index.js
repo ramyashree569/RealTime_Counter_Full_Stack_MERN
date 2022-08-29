@@ -1,6 +1,6 @@
 const Counter = require('../models/Counter')
 
-
+//Perform Updation of collection values
 const UpdateCollection = async (data,CurrentValue) =>{
     if(data.ButtonValue === CurrentValue.ButtonValue){
         return 
@@ -12,6 +12,7 @@ const UpdateCollection = async (data,CurrentValue) =>{
     .catch((err)=>{if(err)throw err})
 }
 
+//Create new collections
 const CreateCollection = async (req,res) =>{
     let buttonVal = req.body.values
     for (let i=0; i< buttonVal.length; i++){

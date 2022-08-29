@@ -5,10 +5,10 @@ import Counter from '../../helpers/Counter';
 import ButtonComponent from '../../helpers/Button';
 import axios from 'axios';
 import io from 'socket.io-client';
-import Typography from '@material-ui/core/Typography';
 
 const socket = io.connect('http://localhost:3003')
 
+//ButtonList is scalable can add more id's in order to get dynamic counter Component (Provided the id's need to be unique)
 let ButtonList = [
   {
     id:1
@@ -26,6 +26,7 @@ export default function App() {
   const [incomingId, setIncomingId] = useState(0)
   const [incomingCount, setIcomingCount] = useState(0)
 
+  //Function posts the array of counter values to backend API
   const handleSubmit=(e)=>{
     e.preventDefault()
     axios.post('http://localhost:3001/Create',{values})
@@ -36,6 +37,7 @@ export default function App() {
     })
   }
   
+  //Reads the Communication emitted from Backend and updates the State
   useEffect(()=>{
     socket.on('send_Counterback',(data,err)=>{
         if(err) throw err

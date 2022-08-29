@@ -6,11 +6,13 @@ import './Counter.scss'
 export default function Counter({ buttonCount, values, setValues, socket, count}) {
   const [Count1,setCount1] = useState(count)
 
+  //Communicates with Backend and Sends the updated CounterValue with id
   const sendCounterValue=(data)=>{
     const client = 1
     socket.emit('send_CounterValue',data,client)
   }
 
+  //Sets the value of Counter Based on incoming counter value
   useEffect(()=>{
     // setCount1(count)
     if(count===0){
@@ -25,6 +27,7 @@ export default function Counter({ buttonCount, values, setValues, socket, count}
     }
   },[count])
 
+//Hanldes increment of counter value and updates final array of counter values 
   const handleIncrememnt= (e,buttonCount)=>{
     setCount1(Count1=>Count1+1)
     let NewCount = Count1+1

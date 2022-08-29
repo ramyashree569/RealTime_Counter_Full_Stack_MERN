@@ -24,6 +24,7 @@ app.use(cors())
 
 const server = http.createServer(app)
 
+//Communication part using socket.io
 io.on("connection",(socket)=>{
     socket.on('send_CounterValue',(data,client,err)=>{
       if(err)console.log(err)
@@ -32,6 +33,8 @@ io.on("connection",(socket)=>{
     })
 })
 
+
+//Initializes DB connection
 mongoose.connect('mongodb://localhost:27017/counterApp',
   {
     useNewUrlParser: true,
