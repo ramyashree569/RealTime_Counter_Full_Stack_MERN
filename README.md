@@ -10,5 +10,6 @@ Server folder contains NodeJS backend.
 
 Important Note:
 In order to add extra buttons visit to App.js file in react frontend folder and add ID in ButtonList array.
+Do follow the comments in order to understand the flow
 
 
